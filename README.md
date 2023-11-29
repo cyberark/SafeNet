@@ -303,7 +303,8 @@ For anyone who want to contribute to the list of configurations available, pleas
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Copyright (c) 2023 CyberArk Software Ltd. All rights reserved  
+This repository is licensed under  Apache-2.0 License - see [`LICENSE`](LICENSE) for more details.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
