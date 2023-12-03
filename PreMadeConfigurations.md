@@ -6,8 +6,8 @@
 | Router OS | VPN Provider | Region | File | Contributor |
 | --- | --- | --- | --- | --- |
 | pfSense | NordVPN | DE | [SafeNet.pfSense.NordVPN.DE.xml](configurations/pfSense/SafeNet.pfSense.NordVPN.DE.xml) | David El|
-<!-- | pfSense | NordVPN | US | [SafeNet.pfSense.NordVPN.US.xml](configurations/pfSense/SafeNet.pfSense.NordVPN.US.xml) | David El|
-| pfSense | NordVPN | UK | [SafeNet.pfSense.NordVPN.UK.xml](configurations/pfSense/SafeNet.pfSense.NordVPN.UK.xml) | David El| -->
+| pfSense | NordVPN | US | [SafeNet.pfSense.NordVPN.US.xml](configurations/pfSense/SafeNet.pfSense.NordVPN.US.xml) | David El|
+| pfSense | NordVPN | UK | [SafeNet.pfSense.NordVPN.UK.xml](configurations/pfSense/SafeNet.pfSense.NordVPN.UK.xml) | David El|
 
 
 ## How to contribute

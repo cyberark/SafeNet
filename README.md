@@ -12,8 +12,8 @@
     <a href="https://github.com/cyberark/SafeNet"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
-    <a href="https://github.com/cyberark/SafeNet">View Demo</a>
-    ·
+    <!-- <a href="https://github.com/cyberark/SafeNet">View Demo</a>
+    · -->
     <a href="https://github.com/cyberark/SafeNet/issues">Report Bug</a>
     ·
     <a href="https://github.com/cyberark/SafeNet/issues">Request Feature</a>
@@ -190,6 +190,7 @@ Protocol: TCP
 Source: Your IP Address OR Your local network IP range OR Any (not recommended!)
 Destination: This firewall (self)
 Port: HTTPS (443)
+Description: Allow HTTPS access to router from WAN network
 ```
 
 Now we need to disable the management from the LAN interface, create a new rule with the following settings:
@@ -197,27 +198,27 @@ Now we need to disable the management from the LAN interface, create a new rule 
 ```
 Action: Block
 Interface: LAN
-Address Family: IPv4
+Address Family: IPv4 + IPv6
 Protocol: Any
 Source: Any
 Destination: This firewall (self)
 Description: Block all access to router from LAN network
 ```
 
-But we need to ensure that DNS is working properly, we we need to exclude it from the rule, create a new rule with the following settings:
+Last but not least, we need to block all traffic from the LAN network to the local network, create a new rule with the following settings:
 
 ```
-Action: Pass
+Action: Block
 Interface: LAN
-Address Family: IPv4
-Protocol: TCP / UDP
+Address Family: IPv4 + IPv6
+Protocol: Any
 Source: Any
-Destination: This firewall(self)
-Port: DNS (53)
-Description: Allow DNS functionality
+Destination: Not (LAN network)
+Port: Any
+Description: Block access to local network from LAN network
 ```
 
-Place both rules at the top of the list, ensure that the DNS rule is above the block rule.
+Place all rules at the top of the list, ensure that the "Block all access to router" rule is above the general block rule.
 
 Disable the anti lockout rule that force enables access from the LAN interface by going to System → Advanced → Check the box on “Disable webConfigurator anti-lockout rules” 
 
@@ -231,13 +232,36 @@ But, in general, you will do the following steps:
   1. Add your VPN provider Certificate Authority
   2. Add a new OpenVPN client to the server of your liking with your credentials
   3. Assign a new interface to the OpenVPN client
-  4. Change DNS settings based on your VPN’s instuctions
+  4. Change DNS settings based on your VPN’s instructions
   5. Change the Outbound NAT rule to route all traffic from the LAN network to the OpenVPN tunnel
   6. Delete the IPv6 LAN rule in the firewall and change the IPv4 rule to forward to your VPN gateway
+
+Additionally, to make sure that when the VPN is disconnected all traffic is blocked, we will enable the following option in pfSense:
+System → Advanced → Miscellaneous → Skip rules when gateway is down
+
 
   </details>
   </li>
 </ul>
+
+<u> Granting access to local network resources </u>
+<br>
+With all the rules in place and the VPN tunnel working properly, we might need to grant access to local network resources like file shares, threat intelligence tools and license servers that all require consistent network access to work efficiently.
+To do so, we will create a rule that allows access to the specific resource, and place it above the block rule we created earlier, for example:
+
+```
+Action: Pass
+Interface: LAN
+Address Family: IPv4 + IPv6
+Protocol: TCP
+Source: Any
+Destination: <IP Address of the resource>
+Port: <Port of the resource>
+Description: Allow access to <Resource Name>
+```
+
+Remember to place the rule above the block rule, and to make sure you only allow access to the resource on the specific port it needs to work, and not to the entire IP address.
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

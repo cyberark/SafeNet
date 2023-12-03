@@ -526,7 +526,7 @@
 			<interface>wan</interface>
 			<ipaddr></ipaddr>
 			<local_port></local_port>
-			<server_addr>de1088.nordvpn.com</server_addr>
+			<server_addr>uk2147.nordvpn.com</server_addr>
 			<server_port>1194</server_port>
 			<proxy_addr></proxy_addr>
 			<proxy_port></proxy_port>
