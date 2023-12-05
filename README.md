@@ -223,7 +223,7 @@ Place all rules at the top of the list, ensure that the "Block all access to rou
 
 Disable the anti lockout rule that force enables access from the LAN interface by going to System → Advanced → Check the box on “Disable webConfigurator anti-lockout rules” 
 
-and finally, delete the  two default rules that come with the installation, they are not needed and can cause issues.
+And finally, delete the two default rules that come with the installation, they are not needed and can cause issues.
 
 Now that we have the firewall all set up, we need to setup a VPN tunnel to tunnel all traffic through it, we will be using OpenVPN as it is the most popular and supported protocol, but you can use any other protocol that your VPN service and router supports.
 
