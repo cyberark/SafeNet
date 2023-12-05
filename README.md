@@ -40,6 +40,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#disclaimer">Disclaimer</a></li>
     <li><a href="#contact">Contact</a></li>
     <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
@@ -332,7 +333,15 @@ This repository is licensed under  Apache-2.0 License - see [`LICENSE`](LICENSE)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Disclaimer
 
+SafeNet is provided on an "as is" basis, without warranties or guarantees of any kind, expressed or implied. You acknowledge that the use the software is at your own risk and discretion. The developers and contributors disclaim any responsibility for the functionality, performance, or suitability of the software for specific purposes.
+
+You are strongly advised to conduct thorough testing in a controlled environment before deploying the software in production. Potential defects, errors, or unexpected behaviors may exist, and users acknowledge the inherent risks associated with its use.
+
+Under no circumstances will the developers or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages, arising from the use of this software.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact

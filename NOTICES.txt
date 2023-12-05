@@ -3,6 +3,7 @@ Copyright (c) 2023 CyberArk Software Ltd. All rights reserved
 SafeNet is using the following open source components:  
 
 pfSense (https://github.com/pfsense/pfsense) : Apache License 2.0  
+pfSense is Copyright 2004-2023 Rubicon Communications, LLC (Netgate)
 
 OPNSense (https://github.com/opnsense/core) : BSD 2-Clause "Simplified" License
 
